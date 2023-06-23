@@ -13,7 +13,7 @@ Here you will get to know about the Date `library`, which is built using `c++` p
     * [Arithmetic Operators](#arithmetic-operators)
     * [Relational Operators](#relational-operators)
     * [isLeapYear Method](#isleapyear-method)
-  * [Exception Handling](#exception-handling)
+* [Exception Handling](#exception-handling)
 ## Overview
 
 Date Library in C++ is a lightweight, user-friendly and comprehensive library designed for working with date in C++ applications. this library provide various date related tasks and offers extensive functionalities for data manipulation, comparision, parsing and other operations. It provides developers with a reliable and efficient solution for handling dates in their C++ projects.
@@ -262,7 +262,7 @@ return 0;
   ```c++
   bool operator!=(const Date &other);
   ```
-### Example
+#### Example
 ```c++
 #include<iostream>
 #include<date>
