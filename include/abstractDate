@@ -19,7 +19,7 @@ virtual string getMonthString() = 0;
 virtual string getMonthShortString() = 0; 
 virtual string getDayOfWeekString() = 0;
 virtual string getDayOfWeekShortString() = 0;
-virtual int isLeapYear() = 0;
+virtual bool isLeapYear() = 0;
 };
 }
 }

@@ -7,8 +7,8 @@ int main()
 {
 try
 {
-Date date();
-cout<<date<<endl;
+Date date("1/1/1901");
+cout<<date.dayNumber<<endl;
 }catch(DateException dateException)
 {
 cout<<dateException.what()<<endl;

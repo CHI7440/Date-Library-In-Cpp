@@ -227,7 +227,7 @@ this->year = other.year;
 return *this;
 }
 
-Date& Date::operator = (string& dateString)
+Date& Date::operator = (string dateString)
 {
 int isValid;
 this->isValidDate(dateString,isValid,this->dayOfMonth,this->month,this->year);
@@ -247,7 +247,9 @@ Date Date::operator+(int days)
 {
 if(this->dayNumber == 0) throw DateException("Operation on Invalid Date");
 Date t;
-t.dayNumber = this->dayNumber+days;
+int tempDayNumber = this->dayNumber+days;
+if(tempDayNumber <= 0) throw DateException("Operation is giving Invalid Date");
+t.dayNumber = tempDayNumber;
 t.fromDayNumber();
 return t;
 }
@@ -265,7 +267,9 @@ return t;
 void Date::operator +=(int days)
 {
 if(this->dayNumber == 0) throw DateException("Operation on Invalid Date");
-this->dayNumber += days;
+int tempDayNumber = this->dayNumber+days;
+if(tempDayNumber <= 0) throw DateException("Operation is giving Invalid Date");
+this->dayNumber = tempDayNumber;
 this->fromDayNumber();
 }
 
@@ -280,7 +284,6 @@ this->fromDayNumber();
 void Date::operator++(int)
 {
 if(this->dayNumber == 0) throw DateException("Operation on Invalid Date");
-cout<<this->dayNumber<<endl;
 this->dayNumber++;
 this->fromDayNumber();
 }
@@ -292,43 +295,43 @@ this->dayNumber--;
 this->fromDayNumber();
 }
 
-int Date::operator<(const Date &other)
+bool Date::operator<(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber == 0) return 0;
 return this->dayNumber<other.dayNumber;
 }
 
-int Date::operator>(const Date &other)
+bool Date::operator>(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber == 0) throw DateException("Operation on Invalid Date");
 return this->dayNumber>other.dayNumber;
 }
 
-int Date::operator<=(const Date &other)
+bool Date::operator<=(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber == 0) throw DateException("Operation on Invalid Date");
 return this->dayNumber<=other.dayNumber;
 }
 
-int Date::operator>=(const Date &other)
+bool Date::operator>=(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber == 0) throw DateException("Operation on Invalid Date");
 return this->dayNumber>=other.dayNumber;
 }
 
-int Date::operator==(const Date &other)
+bool Date::operator==(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber==0) throw DateException("Operation on Invalid Date");
 return this->dayNumber==other.dayNumber;
 }
 
-int Date::operator!=(const Date &other)
+bool Date::operator!=(const Date &other)
 {
 if(this->dayNumber == 0 || other.dayNumber == 0) throw DateException("Operation on Invalid Date");
 return this->dayNumber!=other.dayNumber;
 }
 
-int Date::isLeapYear()
+bool Date::isLeapYear()
 {
 if(this->year == 0) throw DateException("Invalid Year");
 if(this->year%400 == 0) return 1;
