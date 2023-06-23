@@ -1,0 +1,17 @@
+## Instructions to use library methods
+
+1. Download the zip file.
+
+2. Extract the zip file and place in location in your pc.
+
+3. Stay in folder, where you have written c++ code.
+
+4. Open command prompt having the current working directory.
+
+5. Use below command to compile your code :
+
+   "g++ file_name.cpp -o file_name.exe -I <path_to_the_include_folder> -L <path_to_lib_folder> -ldate"
+
+6. Use below command to run your code :
+   
+   "file_name"
