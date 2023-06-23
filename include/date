@@ -1,0 +1,51 @@
+#ifndef __$__date__
+#define __$__date__ 123
+
+#include<iostream>
+#include<abstractDate>
+#include<DateException>
+using namespace std;
+namespace myDate
+{
+class Date : public abc::abstractDate
+{
+int dayOfMonth;
+int month;
+int year;
+int dayNumber;
+void toDayNumber();
+int isLeapYear(int);
+void fromDayNumber();
+void isValidDate(string& dateString, int& isValid, int& d, int& m, int& y);
+public : 
+Date();
+Date(string str);
+Date(const Date &other);
+virtual ~Date();
+int getDayOfMonth();
+int getDayOfWeek();
+int getMonth();
+int getYear();
+string getMonthString();
+string getMonthShortString();
+string getDayOfWeekString();
+string getDayOfWeekShortString();
+int isLeapYear();
+Date& operator = (const Date &other);
+Date& operator = (string& dateString);
+Date operator+(int days);
+Date operator-(int days);
+void operator +=(int number);
+void operator -=(int number);
+void operator++(int);
+void operator--(int);
+int operator<(const Date &other);
+int operator>(const Date &other);
+int operator<=(const Date &other);
+int operator>=(const Date &other);
+int operator==(const Date &other);
+int operator!=(const Date &other);
+};
+ostream& operator<<(ostream& oo, Date& d);
+}
+#endif

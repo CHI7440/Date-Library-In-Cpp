@@ -1,0 +1,27 @@
+#ifndef __$__abstractDate__
+#define __$__abstractDate__ 123
+
+#include<iostream>
+using namespace std;
+
+namespace myDate
+{
+namespace abc
+{
+class abstractDate
+{
+public:
+virtual int getDayOfMonth() = 0;
+virtual int getDayOfWeek() = 0;
+virtual int getMonth() = 0;
+virtual int getYear() = 0;
+virtual string getMonthString() = 0;
+virtual string getMonthShortString() = 0; 
+virtual string getDayOfWeekString() = 0;
+virtual string getDayOfWeekShortString() = 0;
+virtual int isLeapYear() = 0;
+};
+}
+}
+
+#endif

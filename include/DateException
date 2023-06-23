@@ -1,0 +1,21 @@
+#ifndef __$__DateException__
+#define __$__DateException__ 123
+#include<iostream>
+using namespace std;
+
+namespace myDate
+{
+class DateException : public exception
+{
+string message;
+public:
+DateException();
+DateException(string message);
+DateException(const DateException &other);
+virtual ~DateException() throw();
+DateException& operator = (const DateException& other);
+const char* what() const throw();
+};
+}
+
+#endif
