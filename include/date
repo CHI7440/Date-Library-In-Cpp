@@ -12,12 +12,12 @@ class Date : public abc::abstractDate
 int dayOfMonth;
 int month;
 int year;
+int dayNumber;
 void toDayNumber();
 int isLeapYear(int);
 void fromDayNumber();
 void isValidDate(string& dateString, int& isValid, int& d, int& m, int& y);
 public : 
-int dayNumber;
 Date();
 Date(string str);
 Date(const Date &other);
